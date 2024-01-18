@@ -21,7 +21,6 @@ findButton.addEventListener("click", () => {
     }, 2000);
   } else {
     inputFromUserBody.remove();
-
     const body = document.querySelector(".allBody");
 
     fetch(`https://api.github.com/users/${inputData.value}`)
@@ -55,6 +54,12 @@ findButton.addEventListener("click", () => {
         userId.innerHTML = `<p>Id : ${result.id}</p>`;
         infoContainer.appendChild(userId);
 
+         //email
+         const userEmail = document.createElement("div");
+         userEmail.classList.add("useremail");
+         userEmail.innerHTML = `<p>Email : ${result.email}</p>`;
+         infoContainer.appendChild(userEmail);
+
         //followers
         const followers = document.createElement("div");
         followers.classList.add("followers");
@@ -67,11 +72,7 @@ findButton.addEventListener("click", () => {
         following.innerHTML = `<p>Following : ${result.following}</p>`;
         infoContainer.appendChild(following);
 
-        //email
-        const userEmail = document.createElement("div");
-        userEmail.classList.add("useremail");
-        userEmail.innerHTML = `<p>Email : ${result.email}</p>`;
-        infoContainer.appendChild(userEmail);
+       
 
         //company
         const company = document.createElement("div");
