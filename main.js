@@ -1,0 +1,115 @@
+const inputFromUserBody = document.querySelector(".inputFromUser-body");
+const inputData = document.querySelector(".inputData");
+const findButton = document.querySelector(".findUserButton");
+
+const info = document.querySelector(".info");
+
+setTimeout(()=>{
+    info.remove()
+},3000)
+
+
+
+findButton.addEventListener("click", () => {
+  if (inputData.value === "") {
+    alert("empt");
+  } else {
+    inputFromUserBody.remove();
+
+    const body = document.querySelector(".allBody");
+
+    fetch(`https://api.github.com/users/${inputData.value}`)
+      .then((response) => response.json())
+      .then((result) => {
+        //creating main container
+        const container = document.createElement("div");
+        container.classList.add("container");
+        body.appendChild(container);
+
+        //image section
+        const image = document.createElement("div");
+        image.classList.add("imageContainer");
+        image.style.backgroundImage = `url(${result.avatar_url})`;
+        container.appendChild(image);
+
+        // info container
+        const infoContainer = document.createElement("div");
+        infoContainer.classList.add("infoContainer");
+        container.appendChild(infoContainer);
+
+        //name
+        const userName = document.createElement("div");
+        userName.classList.add("username");
+        userName.innerHTML = `<p>Name : ${result.name}</p>`;
+        infoContainer.appendChild(userName);
+
+        //user id
+        const userId = document.createElement("div");
+        userId.classList.add("userId");
+        userId.innerHTML = `<p>Id : ${result.id}</p>`;
+        infoContainer.appendChild(userId);
+
+        //followers
+        const followers = document.createElement("div");
+        followers.classList.add("followers");
+        followers.innerHTML = `<p>Followers : ${result.followers}</p>`;
+        infoContainer.appendChild(followers);
+
+        //following
+        const following = document.createElement("div");
+        following.classList.add("following");
+        following.innerHTML = `<p>Following : ${result.following}</p>`;
+        infoContainer.appendChild(following);
+
+        //email
+        const userEmail = document.createElement("div");
+        userEmail.classList.add("useremail");
+        userEmail.innerHTML = `<p>Email : ${result.email}</p>`;
+        infoContainer.appendChild(userEmail);
+
+        //company
+        const company = document.createElement("div");
+        company.classList.add("company");
+        company.innerHTML = `<p>Company : ${result.company}</p>`;
+        infoContainer.appendChild(company);
+
+        //container for button
+        const buttonContainer = document.createElement("div");
+        buttonContainer.classList.add("buttonContainer");
+        container.appendChild(buttonContainer);
+
+        //button for show more info
+        const showMoreButton = document.createElement("button");
+        showMoreButton.setAttribute("type", "submit");
+        showMoreButton.textContent = "Show more info";
+        buttonContainer.appendChild(showMoreButton);
+
+        //button for search another user
+        const searchAnotherUser = document.createElement("button");
+        searchAnotherUser.textContent = "Search another User";
+        buttonContainer.appendChild(searchAnotherUser);
+
+        //event listener for search another user
+        searchAnotherUser.addEventListener("click", () => {
+          location.reload();
+        });
+
+        //event listener for  show more button
+
+        showMoreButton.addEventListener("click", () => {
+          if (container.classList.contains("moreInfoActive")) {
+            alert("already Displayed");
+          } else {
+            body.style.marginTop = "200px";
+            container.classList.add("moreInfoActive");
+            const moreInfo = document.createElement("div");
+            moreInfo.classList.add("moreInfoContainer");
+            body.appendChild(moreInfo);
+          }
+        });
+      })
+      .catch(() => {
+        console.log("user nOt found");
+      });
+  }
+});
