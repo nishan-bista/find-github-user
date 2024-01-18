@@ -4,15 +4,21 @@ const findButton = document.querySelector(".findUserButton");
 
 const info = document.querySelector(".info");
 
-setTimeout(()=>{
-    info.remove()
-},3000)
+setTimeout(() => {
+  info.remove();
+}, 4000);
 
-
+const alertBox = document.querySelector(".alertBox");
 
 findButton.addEventListener("click", () => {
   if (inputData.value === "") {
-    alert("empt");
+    alertBox.style.padding = "10px";
+    alertBox.textContent = "Alert : Input is empty.";
+
+    setTimeout(() => {
+      alertBox.style.padding = "0";
+      alertBox.textContent = "";
+    }, 2000);
   } else {
     inputFromUserBody.remove();
 
@@ -98,18 +104,25 @@ findButton.addEventListener("click", () => {
 
         showMoreButton.addEventListener("click", () => {
           if (container.classList.contains("moreInfoActive")) {
-            alert("already Displayed");
+            alert("Already displayed");
           } else {
             body.style.marginTop = "200px";
             container.classList.add("moreInfoActive");
             const moreInfo = document.createElement("div");
             moreInfo.classList.add("moreInfoContainer");
             body.appendChild(moreInfo);
+
+            //more data into show more info
+            cont
+
+
+
+
           }
         });
       })
       .catch(() => {
-        console.log("user nOt found");
+        alert("User Not Found!")
       });
   }
 });

@@ -1,112 +1,113 @@
-*{
-    padding: 0;
-    margin: 0;
-    border: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  border: border-box;
 }
-body{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
- 
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.info{
-    padding: 10px;
-    height: 30px;
-    background-color: lightgray;
-    margin-bottom:50px;
-    border-radius:10px ;
-
+.info {
+  padding: 10px;
+  height: 30px;
+  background-color: lightgray;
+  margin-bottom: 50px;
+  border-radius: 10px;
 }
-.inputFromUser-body{
-    height: 100px;
-    border: 2px solid black;
-    width: 300px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.alertBox {
+  border-radius: 10px;
+  background-color: red;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
 }
-.inputFromUser-body input{
-    height: 25px;
-    width: 65%;
-    text-align: center;
+.inputFromUser-body {
+  height: 100px;
+  border: 2px solid black;
+  width: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.inputFromUser-body button{
-    width: 25%;
+.inputFromUser-body input {
+  height: 25px;
+  width: 65%;
+  text-align: center;
 }
-
-.allBody{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 5px;
+.inputFromUser-body button {
+  width: 25%;
 }
 
+.allBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
 
-.container{
-    border: 2px solid black;
-    margin-top: 20px;
-    height: 400px;
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+.container {
+  border: 2px solid black;
+  margin-top: 20px;
+  height: 400px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.imageContainer{
-    border: 2px solid black;
-    height: 200px;
-    width: 200px;
-    background-size: cover;
+.imageContainer {
+  border: 2px solid black;
+  height: 200px;
+  width: 200px;
+  background-size: cover;
 }
-.infoContainer{
-    border:2px solid black ;
-    height: 120px;
-    width: 95%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap: 15px;
-  
+.infoContainer {
+  border: 2px solid black;
+  height: 120px;
+  width: 95%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 15px;
 }
-.username{
-    border-bottom: 2px double black;
-    display: inline-block;
+.username {
+  border-bottom: 2px double black;
+  display: inline-block;
 }
-.userId{
-    display: inline-block;
+.userId {
+  display: inline-block;
 }
-.followers{
-    display: inline-block;
-
+.followers {
+  display: inline-block;
 }
-.following{
-    display: inline-block;
+.following {
+  display: inline-block;
 }
-.useremail{
-    display: inline-block;
+.useremail {
+  display: inline-block;
 }
-.company{
-    display: inline-block;
+.company {
+  display: inline-block;
 }
-.hireable{
-    display: inline-block;
-
+.hireable {
+  display: inline-block;
 }
-.moreInfoContainer{
-    border: 2px solid black;
-height: 600px;
-width: 600px;
+.moreInfoContainer {
+  border: 2px solid black;
+  height: 600px;
+  width: 600px;
 }
-.buttonContainer{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
-button{
-    padding: 5px;
+button {
+  padding: 5px;
 }
