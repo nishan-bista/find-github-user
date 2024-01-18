@@ -113,16 +113,79 @@ findButton.addEventListener("click", () => {
             body.appendChild(moreInfo);
 
             //more data into show more info
-            cont
 
+            const bio = document.createElement("span");
+            bio.textContent = `Bio : "${result.bio}"`;
+            moreInfo.appendChild(bio);
 
+            //username
+            const username = document.createElement("span");
+            username.textContent = `Username : ${result.name}`;
+            moreInfo.appendChild(username);
 
+            //user id
+            const userId = document.createElement("span");
+            userId.textContent = `User Id : ${result.login}`;
+            moreInfo.appendChild(userId);
 
+            //usertype
+            const type = document.createElement("span");
+            type.textContent = `Account Type : ${result.type}`;
+            moreInfo.appendChild(type);
+
+            //location
+            const location = document.createElement("span");
+            location.textContent = `Location : ${result.location}`;
+            moreInfo.appendChild(location);
+
+            //email
+            const email = document.createElement("span");
+            email.textContent = `Email : ${result.email}`;
+            moreInfo.appendChild(email);
+
+            //company
+            moreInfo.appendChild(company);
+
+            //hireable
+            const hireable = document.createElement("span");
+            hireable.textContent = `Hireable : ${result.hireable}`;
+            moreInfo.appendChild(hireable);
+
+            //Public repos
+            const publicRepos = document.createElement("span");
+            publicRepos.textContent = `Public Repository : ${result.public_repos}`;
+            moreInfo.appendChild(publicRepos);
+
+            //followers and following
+            moreInfo.appendChild(followers);
+            moreInfo.appendChild(following);
+
+            const twitter = document.createElement("span");
+            twitter.textContent = `Twitter username : ${result.twitter_username}`;
+            moreInfo.appendChild(twitter);
+
+            const accountCreatedDate = document.createElement("span");
+            accountCreatedDate.textContent = `Account created at: ${result.created_at}`;
+            moreInfo.appendChild(accountCreatedDate);
+
+            const accountUpdatedDate = document.createElement("span");
+            accountUpdatedDate.textContent = `Updated at : ${result.updated_at}`;
+            moreInfo.appendChild(accountUpdatedDate);
+
+            const blog = document.createElement("span");
+            blog.textContent = ` Blog : ${result.blog}`;
+            moreInfo.appendChild(blog);
+
+            const gotoAccount = document.createElement("a");
+            gotoAccount.href = result.html_url;
+            gotoAccount.textContent =
+              "Click here to goto user account in Github";
+            moreInfo.appendChild(gotoAccount);
           }
         });
       })
       .catch(() => {
-        alert("User Not Found!")
+        alert("User Not Found!");
       });
   }
 });
