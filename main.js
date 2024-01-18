@@ -54,7 +54,7 @@ findButton.addEventListener("click", () => {
         userId.innerHTML = `<p>Id : ${result.id}</p>`;
         infoContainer.appendChild(userId);
 
-         //email
+        //  email
          const userEmail = document.createElement("div");
          userEmail.classList.add("useremail");
          userEmail.innerHTML = `<p>Email : ${result.email}</p>`;
@@ -73,12 +73,6 @@ findButton.addEventListener("click", () => {
         infoContainer.appendChild(following);
 
        
-
-        //company
-        const company = document.createElement("div");
-        company.classList.add("company");
-        company.innerHTML = `<p>Company : ${result.company}</p>`;
-        infoContainer.appendChild(company);
 
         //container for button
         const buttonContainer = document.createElement("div");
@@ -145,6 +139,9 @@ findButton.addEventListener("click", () => {
             moreInfo.appendChild(email);
 
             //company
+            const company = document.createElement("span");
+            company.classList.add("company");
+            company.innerHTML = `<p>Company : ${result.company}</p>`;
             moreInfo.appendChild(company);
 
             //hireable
