@@ -174,7 +174,7 @@ findButton.addEventListener("click", () => {
             moreInfo.appendChild(accountUpdatedDate);
 
             const blog = document.createElement("span");
-            blog.textContent = ` Blog : ${result.blog}`;
+            blog.innerHTML = ` Blog : <a href="${result.blog}">${result.blog}</a>`;
             moreInfo.appendChild(blog);
 
             const gotoAccount = document.createElement("a");
