@@ -87,7 +87,7 @@ findButton.addEventListener("click", () => {
         //button for show more info
         const showMoreButton = document.createElement("button");
         showMoreButton.setAttribute("type", "submit");
-        showMoreButton.textContent = "Show more info";
+        showMoreButton.textContent = "Show all info";
         buttonContainer.appendChild(showMoreButton);
 
         //button for search another user
