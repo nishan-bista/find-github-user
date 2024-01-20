@@ -55,10 +55,10 @@ findButton.addEventListener("click", () => {
         infoContainer.appendChild(userId);
 
         //  email
-         const userEmail = document.createElement("div");
-         userEmail.classList.add("useremail");
-         userEmail.innerHTML = `<p>Email : ${result.email}</p>`;
-         infoContainer.appendChild(userEmail);
+        const userEmail = document.createElement("div");
+        userEmail.classList.add("useremail");
+        userEmail.innerHTML = `<p>Email : ${result.email}</p>`;
+        infoContainer.appendChild(userEmail);
 
         //followers
         const followers = document.createElement("div");
@@ -71,8 +71,6 @@ findButton.addEventListener("click", () => {
         following.classList.add("following");
         following.innerHTML = `<p>Following : ${result.following}</p>`;
         infoContainer.appendChild(following);
-
-       
 
         //container for button
         const buttonContainer = document.createElement("div");
