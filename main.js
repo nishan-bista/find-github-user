@@ -7,9 +7,7 @@ const info = document.querySelector(".info");
 setTimeout(() => {
   info.remove();
 }, 4000);
-
 const alertBox = document.querySelector(".alertBox");
-
 findButton.addEventListener("click", () => {
   if (inputData.value === "") {
     alertBox.style.padding = "10px";
@@ -19,6 +17,7 @@ findButton.addEventListener("click", () => {
       alertBox.style.padding = "0";
       alertBox.textContent = "";
     }, 2000);
+
   } else {
     inputFromUserBody.remove();
     const body = document.querySelector(".allBody");
@@ -156,18 +155,23 @@ findButton.addEventListener("click", () => {
             moreInfo.appendChild(followers);
             moreInfo.appendChild(following);
 
+            //for twitter
             const twitter = document.createElement("span");
             twitter.textContent = `Twitter username : ${result.twitter_username}`;
             moreInfo.appendChild(twitter);
 
+            //account creation 
             const accountCreatedDate = document.createElement("span");
             accountCreatedDate.textContent = `Account created at: ${result.created_at}`;
             moreInfo.appendChild(accountCreatedDate);
 
+
+            //latest profile update
             const accountUpdatedDate = document.createElement("span");
             accountUpdatedDate.textContent = `Updated at : ${result.updated_at}`;
             moreInfo.appendChild(accountUpdatedDate);
 
+            //blogs
             const blog = document.createElement("span");
             blog.innerHTML = ` Blog : <a href="${result.blog}">${result.blog}</a>`;
             moreInfo.appendChild(blog);
